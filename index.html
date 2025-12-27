@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immersive Weather</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="night">
+
+  <!-- Background layers -->
+  <div class="stars"></div>
+  <div class="fog hidden" id="fog"></div>
+  <div class="rain hidden" id="rain"></div>
+
+  <main class="scene">
+
+    <!-- Search -->
+    <div class="search">
+      <input id="cityInput" placeholder="Search city...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- City -->
+    <header class="top">
+      <h2 id="city">—</h2>
+      <p id="date">—</p>
+    </header>
+
+    <!-- Illustration -->
+    <div class="illustration" id="illustration">🌙</div>
+
+    <!-- Temperature -->
+    <section class="temp-section">
+      <span id="temp">--</span><span class="deg">°</span>
+      <p id="desc"></p>
+      <p class="feels" id="feels"></p>
+    </section>
+
+    <!-- Hourly timeline -->
+    <section class="hourly" id="hourly"></section>
+
+    <!-- Mood line -->
+    <p class="mood" id="mood"></p>
+
+    <!-- Tomorrow -->
+    <p class="tomorrow" id="tomorrow"></p>
+
+    <!-- Stats -->
+    <footer class="details">
+      <div class="stat-box">
+        <p class="label">Humidity</p>
+        <p><span id="humidity">--</span>%</p>
+      </div>
+      <div class="stat-box">
+        <p class="label">Wind</p>
+        <p><span id="wind">--</span> m/s</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

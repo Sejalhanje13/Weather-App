@@ -1,0 +1,201 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+body.night {
+  background: linear-gradient(
+    120deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+  background-size: 300% 300%;
+  animation: skyMove 20s ease infinite;
+}
+
+@keyframes skyMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Stars */
+.stars {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 60% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 80% 70%, #fff, transparent);
+  opacity: 0.6;
+}
+
+/* Fog */
+.fog {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Rain */
+.rain {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.25) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  animation: rain 0.4s linear infinite;
+}
+
+@keyframes rain {
+  from { background-position: 0 0; }
+  to { background-position: -20px 40px; }
+}
+
+.hidden { display: none; }
+
+/* Scene */
+.scene {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Search */
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search input {
+  padding: 12px 16px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.search button {
+  padding: 12px 18px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+}
+
+/* Top */
+.top h2 { font-size: 1.5rem; }
+.top p { opacity: 0.75; }
+
+/* Illustration */
+.illustration {
+  text-align: center;
+  font-size: 6rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+/* Temperature */
+.temp-section {
+  text-align: center;
+}
+
+#temp {
+  font-size: 5.8rem;
+  font-weight: 300;
+}
+
+.deg { font-size: 2.6rem; }
+
+#desc {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.feels {
+  font-size: 0.95rem;
+  opacity: 0.65;
+}
+
+/* Hourly */
+.hourly {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.hour {
+  min-width: 72px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.15);
+  text-align: center;
+  opacity: 0.75;
+}
+
+.hour.current {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(255,255,255,0.25);
+}
+
+.hour p {
+  font-size: 0.85rem;
+}
+
+/* Mood */
+.mood {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* Tomorrow */
+.tomorrow {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.65;
+}
+
+/* Stats */
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
